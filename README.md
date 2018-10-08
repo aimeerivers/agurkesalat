@@ -9,6 +9,10 @@ Kom hurtigt i gang med funktionelle tests i Ruby, Cucumber, Selenium og Docker.
 
 * [Kom i gang](#kom-i-gang)
 * [Start et selenium netværk](#start-et-selenium-netværk)
+* [Bygg en container for at køre dine tests](#bygg-en-container-for-at-køre-dine-tests)
+* [Kør dine tests indenfor din container](#kør-dine-tests-indenfor-din-container)
+
+
 
 Kom i gang
 ----------
@@ -19,6 +23,8 @@ Clone det her repository med git.
 
     git clone git@github.com:sermoa/agurkesalat.git
     cd agurkesalat
+
+
 
 Start et selenium netværk
 -------------------------
@@ -61,3 +67,24 @@ Når du er færdig med netværket, stopper du det sådan:
 
     docker-compose down
 
+
+
+Bygg en container for at køre dine tests
+----------------------------------------
+
+Vi bruger filen `Dockerfile` til at bygge en container med Ruby og Cucumber. Vi kan tagge den som `agurkesalat` (et andet navn er også okay, men husk navnet!)
+
+    docker build -t agurkesalat .
+
+
+
+Kør dine tests indenfor din container
+-------------------------------------
+
+    docker run -t --network agurkesalat_default agurkesalat
+
+Vi kører containeren `agurkesalat` og bruger netværket `agurkesalat_default` som blev skabet før med `docker-compose` kommandoen.
+
+Nu har du en anden container i det samme netværk, som kan tale med din selenium hub. Din selenium hub skal vælge en node (firefox eller chrome) der kan køre dine tests.
+
+![Cucumber container kører tests i netværket](billeder/agurkesalat_diagram.png "Cucumber container kører tests i netværket")
