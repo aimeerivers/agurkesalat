@@ -10,6 +10,7 @@ Kom hurtigt i gang med funktionelle tests i Ruby, Cucumber, Selenium og Docker.
 * [Kom i gang](#kom-i-gang)
 * [Start et selenium netværk](#start-et-selenium-netværk)
   - [Start flere nodes på samme tid](#start-flere-nodes-på-samme-tid)
+  - [Stop selenium netværket](#stop-selenium-netværket)
 * [Bygg en container for at køre dine tests](#bygg-en-container-for-at-køre-dine-tests)
 * [Kør dine tests indenfor din container](#kør-dine-tests-indenfor-din-container)
   - [Test i Chrome eller Firefox](#test-i-chrome-eller-firefox)
@@ -73,6 +74,10 @@ Nu har du 3 firefox nodes og 3 chrome nodes.
 Du kan godt se hvor mange docker containers kører på tidspunkt:
 
     docker container ls
+
+
+
+### Stop selenium netværket
 
 Når du er færdig med netværket, stopper du det sådan:
 
