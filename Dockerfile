@@ -13,5 +13,8 @@ RUN bundle install
 # Kopi cucumber features til containeren
 COPY ./features ./features
 
+# Skab nye mapper
+RUN mkdir -p /arbjede/skaermbilleder
+
 # Kør cucumber tests
 CMD bundle exec cucumber

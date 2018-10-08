@@ -12,6 +12,8 @@ Kom hurtigt i gang med funktionelle tests i Ruby, Cucumber, Selenium og Docker.
 * [Bygg en container for at køre dine tests](#bygg-en-container-for-at-køre-dine-tests)
 * [Kør dine tests indenfor din container](#kør-dine-tests-indenfor-din-container)
 * [Skriv nye tests](#skriv-nye-tests)
+  - [Når du vil debug siden](#når-du-vil-debug-siden)
+  - [Når du vil kigge indenfor containeren](#når-du-vil-kigge-indenfor-containeren)
   - [Når du har brug for en ny gem](#når-du-har-brug-for-en-ny-gem)
 
 
@@ -98,7 +100,35 @@ Skriv nye tests
 
 Normalt kører testerne som blev bygget i containeren. Når du ikke vil bygge kontinuerligt en nye container image, kan du montere en lokale mappe inden containeren sådan:
 
-    docker run -t --network agurkesalat_default --volume `pwd`/features:/arbejde/features agurkesalat
+    docker run -t --network agurkesalat_default --volume `pwd`/:/arbejde agurkesalat
+
+Jeg kan godt lide at køre kun en test ad gangen når jeg skriver nye tests. Jeg bruger en `@wip` tag og kører cucumber sådan:
+
+    docker run -t --network agurkesalat_default --volume `pwd`/:/arbejde agurkesalat cucumber --tags @wip
+
+
+
+### Når du vil debug siden
+
+Simpelthen skriv `debug page` i dine trin definitioner. Et skærmbillede skal findes i en `skaermbilleder` mappe.
+
+```ruby
+Givet("jeg er på radio-oversigten") do
+  visit '/radio/oversigt'
+  accept_cookies
+  debug page
+end
+```
+
+Husk at fjerne debug trinnet bagefter.
+
+
+
+### Når du vil kigge indenfor containeren
+
+Du kan køre bash indenfor containeren sådan:
+
+    docker run -ti --network agurkesalat_default --volume `pwd`/:/arbejde agurkesalat /bin/bash
 
 
 
