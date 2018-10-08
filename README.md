@@ -11,6 +11,8 @@ Kom hurtigt i gang med funktionelle tests i Ruby, Cucumber, Selenium og Docker.
 * [Start et selenium netværk](#start-et-selenium-netværk)
 * [Bygg en container for at køre dine tests](#bygg-en-container-for-at-køre-dine-tests)
 * [Kør dine tests indenfor din container](#kør-dine-tests-indenfor-din-container)
+* [Skriv nye tests](#skriv-nye-tests)
+  - [Når du har brug for en ny gem](#når-du-har-brug-for-en-ny-gem)
 
 
 
@@ -88,3 +90,24 @@ Vi kører containeren `agurkesalat` og bruger netværket `agurkesalat_default` s
 Nu har du en anden container i det samme netværk, som kan tale med din selenium hub. Din selenium hub skal vælge en node (firefox eller chrome) der kan køre dine tests.
 
 ![Cucumber container kører tests i netværket](billeder/agurkesalat_diagram.png "Cucumber container kører tests i netværket")
+
+
+
+Skriv nye tests
+---------------
+
+Normalt kører testerne som blev bygget i containeren. Når du ikke vil bygge kontinuerligt en nye container image, kan du montere en lokale mappe inden containeren sådan:
+
+    docker run -t --network agurkesalat_default --volume `pwd`/features:/arbejde/features agurkesalat
+
+
+
+### Når du har brug for en ny gem
+
+Tilføj den til `Gemfile` og kør den her kommando til at opdatere `Gemfile.lock`:
+
+    docker run --rm --volume `pwd`:/arbejde --workdir /arbejde ruby:2.5.1 bundle lock --update
+
+Husk at genbygge din agurkesalat container.
+
+    docker build -t agurkesalat .

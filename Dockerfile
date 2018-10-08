@@ -10,5 +10,8 @@ RUN bundle config --global frozen 1
 RUN gem update bundler
 RUN bundle install
 
+# Kopi cucumber features til containeren
+COPY ./features ./features
+
 # Kør cucumber tests
 CMD bundle exec cucumber
