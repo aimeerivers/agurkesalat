@@ -16,3 +16,8 @@ Egenskab: Eksempler
     Så skal jeg se kun de følgende kanaler:
        | P4 København |
        | DR P1        |
+
+  Scenarie: Hero programmer på DRTVs forside
+    Givet jeg er på DRTVs forside
+    Når jeg klikker på hver hero program link
+    Så skal jeg gå til den korrekte program side

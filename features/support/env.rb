@@ -33,10 +33,11 @@ end
 Retriable.configure do |c|
   c.on = RSpec::Expectations::ExpectationNotMetError
   c.base_interval = 0.1
-  c.tries = 50
+  c.tries = 10
 end
 
 After do |scenario|
+  debug page if scenario.failed?
   page.driver.reset!
 end
 

@@ -1,6 +1,7 @@
 module CookiesHelper
 
   def accept_cookies
+    sleep 0.1
     cookie_buttons = page.all('#CybotCookiebotDialogBodyButtonAccept')
     cookie_buttons.first.click if cookie_buttons.any?
     
