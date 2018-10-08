@@ -1,6 +1,8 @@
 # agurkesalat
 Kom hurtigt i gang med funktionelle tests i Ruby, Cucumber, Selenium og Docker.
 
+![Salat med agurk og andre grøntsager](billeder/agurkesalat.jpg "Salat med agurk og andre grøntsager")
+
 ## Kom i gang
 
 Du skal har brug for [Git](https://git-scm.com/downloads) og [Docker](https://www.docker.com/get-started)
