@@ -3,14 +3,10 @@ include CookiesHelper
 Givet("jeg er på radio-oversigten") do
   visit '/radio/oversigt'
   accept_cookies
-  debug page
 end
 
 Når("jeg tilføjer {string} som en Favoritkanal") do |kanal|
   click_button 'Vælg favoritkanaler'
-  sleep 1
-  debug page
-  sleep 1
   within('.channelList') { find('div', text: kanal).click }
   first('button', text: 'GEM').click
 end

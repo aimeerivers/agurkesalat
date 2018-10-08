@@ -7,7 +7,6 @@ Egenskab: Eksempler
     Givet jeg er på DRDKs hjemmeside
     Så skal jeg se "DR" i titlen
 
-  @wip
   Scenarie: Jeg tilføjer favoritkanaler i Radio oversigt
     Givet jeg er på radio-oversigten
     Når jeg tilføjer "P4 København" som en Favoritkanal

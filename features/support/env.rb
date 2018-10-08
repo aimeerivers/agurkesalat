@@ -33,5 +33,7 @@ After do |scenario|
 end
 
 def debug(page)
-  page.save_screenshot("./skaermbilleder/#{Time.now.strftime('%Y-%m-%d_%H-%M-%S-%L')}.png")
+  time = Time.now.strftime('%Y-%m-%d_%H-%M-%S-%L')
+  page.save_screenshot("./skaermbilleder/#{time}.png")
+  page.save_page("./skaermbilleder/#{time}.html")
 end
