@@ -121,11 +121,17 @@ Vær sikker på at [flere Chrome eller Firefox nodes kører](#start-flere-nodes-
 
 Nu kan du køre tests parallelt, i Firefox:
 
-    docker run -t --network agurkesalat_default agurkesalat parallel_cucumber features/*.feature -n 3 --group-by scenarios -o '-p firefox'
+```bash
+docker run -t --network agurkesalat_default agurkesalat \
+  parallel_cucumber features -n 3 --group-by scenarios -o '-p firefox'
+```
 
 Eller Chrome:
 
-    docker run -t --network agurkesalat_default agurkesalat parallel_cucumber features/*.feature -n 3 --group-by scenarios -o '-p chrome'
+```bash
+docker run -t --network agurkesalat_default agurkesalat \
+  parallel_cucumber features -n 3 --group-by scenarios -o '-p chrome'
+```
 
 
 
