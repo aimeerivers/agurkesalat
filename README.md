@@ -1,9 +1,17 @@
-# agurkesalat
+agurkesalat
+===========
+
 Kom hurtigt i gang med funktionelle tests i Ruby, Cucumber, Selenium og Docker.
 
 ![Salat med agurk og andre grøntsager](billeder/agurkesalat.jpg "Salat med agurk og andre grøntsager")
 
-## Kom i gang
+#### Indhold
+
+* [Kom i gang](#kom-i-gang)
+* [Start et selenium netværk](#start-et-selenium-netværk)
+
+Kom i gang
+----------
 
 Du skal har brug for [Git](https://git-scm.com/downloads) og [Docker](https://www.docker.com/get-started)
 
@@ -12,7 +20,8 @@ Clone det her repository med git.
     git clone git@github.com:sermoa/agurkesalat.git
     cd agurkesalat
 
-## Start et selenium netværk
+Start et selenium netværk
+-------------------------
 
 Vi bruger filen `docker-compose.yml` til at starte 3 Docker containers:
 
@@ -51,3 +60,4 @@ Du kan godt se hvor mange docker containers kører på tidspunkt:
 Når du er færdig med netværket, stopper du det sådan:
 
     docker-compose down
+
