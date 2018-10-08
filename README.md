@@ -25,7 +25,7 @@ Kom hurtigt i gang med funktionelle tests i Ruby, Cucumber, Selenium og Docker.
 Kom i gang
 ----------
 
-Du skal har brug for [Git](https://git-scm.com/downloads) og [Docker](https://www.docker.com/get-started)
+Du skal have brug for [Git](https://git-scm.com/downloads) og [Docker](https://www.docker.com/get-started)
 
 Klon det her repository med git.
 
