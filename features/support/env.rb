@@ -6,7 +6,15 @@ require 'retriable'
 require 'rspec'
 
 Capybara.app_host = 'https://www.dr.dk'
-Capybara.default_driver = :selenium_grid_firefox
+
+case ENV['TEST_ENV']
+when 'chrome'
+  Capybara.default_driver = :selenium_grid_chrome
+when 'firefox'
+  Capybara.default_driver = :selenium_grid_firefox
+else
+  Capybara.default_driver = :selenium_grid_firefox
+end
 
 Capybara.register_driver :selenium_grid_firefox do |app|
   Capybara::Selenium::Driver.new(app,

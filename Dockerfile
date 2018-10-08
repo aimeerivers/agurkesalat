@@ -12,9 +12,10 @@ RUN bundle install
 
 # Kopi cucumber features til containeren
 COPY ./features ./features
+COPY cucumber.yml .
 
 # Skab nye mapper
 RUN mkdir -p /arbjede/skaermbilleder
 
 # Kør cucumber tests
-CMD bundle exec cucumber
+CMD cucumber --profile firefox

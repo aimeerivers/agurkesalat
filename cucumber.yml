@@ -1,0 +1,2 @@
+firefox: TEST_ENV=firefox
+chrome: TEST_ENV=chrome

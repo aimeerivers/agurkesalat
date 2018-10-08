@@ -11,6 +11,7 @@ Kom hurtigt i gang med funktionelle tests i Ruby, Cucumber, Selenium og Docker.
 * [Start et selenium netværk](#start-et-selenium-netværk)
 * [Bygg en container for at køre dine tests](#bygg-en-container-for-at-køre-dine-tests)
 * [Kør dine tests indenfor din container](#kør-dine-tests-indenfor-din-container)
+  - [Test i Chrome eller Firefox](#test-i-chrome-eller-firefox)
 * [Skriv nye tests](#skriv-nye-tests)
   - [Når du vil debug siden](#når-du-vil-debug-siden)
   - [Når du vil kigge indenfor containeren](#når-du-vil-kigge-indenfor-containeren)
@@ -92,6 +93,14 @@ Vi kører containeren `agurkesalat` og bruger netværket `agurkesalat_default` s
 Nu har du en anden container i det samme netværk, som kan tale med din selenium hub. Din selenium hub skal vælge en node (firefox eller chrome) der kan køre dine tests.
 
 ![Cucumber container kører tests i netværket](billeder/agurkesalat_diagram.png "Cucumber container kører tests i netværket")
+
+
+
+### Test i Chrome eller Firefox
+
+Som standard kører testerne i Firefox. Sådan kan du styre testerne ved Chrome:
+
+    docker run -t --network agurkesalat_default agurkesalat cucumber --profile chrome
 
 
 
