@@ -41,3 +41,11 @@ Nu har du 3 firefox nodes og 3 chrome nodes.
 ![Selenium netværk med flere nodes](billeder/selenium_hub_flere_nodes.png "Selenium netværk med flere nodes")
 
 ![Selenium netværk med flere nodes diagram](billeder/selenium_hub_flere_nodes_diagram.png "Selenium netværk med flere nodes diagram")
+
+Du kan godt se hvor mange docker containers kører på tidspunkt:
+
+    docker container ls
+
+Når du er færdig med netværket, stopper du det sådan:
+
+    docker-compose down
