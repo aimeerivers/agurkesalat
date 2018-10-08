@@ -28,7 +28,16 @@ Besøg http://localhost:4444/grid/console om at se dit selenium netværk.
 
 Her har du skabet et selenium netværk med 3 containers: en selenium hub og 2 selenium nodes, en til firefox browser, og en til chrome browser. Containerne er klar til at køre tests for dig.
 
-Containerne existerer i et netværk, der hedder `agurkesalat_default`.
+Containerne eksisterer i et netværk, der hedder `agurkesalat_default`.
 
 ![Selenium netværk diagram](billeder/selenium_hub_diagram.png "Selenium netværk diagram")
 
+Hvis du vil, kan du tilføje flere nodes af firefox og chrome. Det kan være nyttigt når du vil køre flere tests parallelt.
+
+    docker-compose up -d --scale firefox=3 --scale chrome=3
+
+Nu har du 3 firefox nodes og 3 chrome nodes.
+
+![Selenium netværk med flere nodes](billeder/selenium_hub_flere_nodes.png "Selenium netværk med flere nodes")
+
+![Selenium netværk med flere nodes diagram](billeder/selenium_hub_flere_nodes_diagram.png "Selenium netværk med flere nodes diagram")
