@@ -9,9 +9,11 @@ Kom hurtigt i gang med funktionelle tests i Ruby, Cucumber, Selenium og Docker.
 
 * [Kom i gang](#kom-i-gang)
 * [Start et selenium netværk](#start-et-selenium-netværk)
+  - [Start flere nodes på samme tid](#start-flere-nodes-på-samme-tid)
 * [Bygg en container for at køre dine tests](#bygg-en-container-for-at-køre-dine-tests)
 * [Kør dine tests indenfor din container](#kør-dine-tests-indenfor-din-container)
   - [Test i Chrome eller Firefox](#test-i-chrome-eller-firefox)
+  - [Test flere scenarier parallelt](#test-flere-scenarier-parallelt)
 * [Skriv nye tests](#skriv-nye-tests)
   - [Når du vil debug siden](#når-du-vil-debug-siden)
   - [Når du vil kigge indenfor containeren](#når-du-vil-kigge-indenfor-containeren)
@@ -54,7 +56,11 @@ Containerne eksisterer i et netværk, der hedder `agurkesalat_default`.
 
 ![Selenium netværk diagram](billeder/selenium_hub_diagram.png "Selenium netværk diagram")
 
-Hvis du vil, kan du tilføje flere nodes af firefox og chrome. Det kan være nyttigt når du vil køre flere tests parallelt.
+
+
+### Start flere nodes på samme tid
+
+Hvis du vil, kan du tilføje flere nodes af firefox og chrome. Det kan være nyttigt når du vil [køre flere tests parallelt](#test-flere-scenarier-parallelt).
 
     docker-compose up -d --scale firefox=3 --scale chrome=3
 
@@ -101,6 +107,20 @@ Nu har du en anden container i det samme netværk, som kan tale med din selenium
 Som standard kører testerne i Firefox. Sådan kan du styre testerne ved Chrome:
 
     docker run -t --network agurkesalat_default agurkesalat cucumber --profile chrome
+
+
+
+### Test flere scenarier parallelt
+
+Vær sikker på at [flere Chrome eller Firefox nodes kører](#start-flere-nodes-på-samme-tid).
+
+Nu kan du køre tests parallelt, i Firefox:
+
+    docker run -t --network agurkesalat_default agurkesalat parallel_cucumber features/*.feature -n 3 --group-by scenarios -o '-p firefox'
+
+Eller Chrome:
+
+    docker run -t --network agurkesalat_default agurkesalat parallel_cucumber features/*.feature -n 3 --group-by scenarios -o '-p chrome'
 
 
 
