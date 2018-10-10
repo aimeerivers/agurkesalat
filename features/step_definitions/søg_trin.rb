@@ -3,7 +3,7 @@ include CookiesHelper
 Givet("jeg er på DRDKs søgside") do
   visit '/search'
   accept_cookies
-  expect(page.title.downcase).to include('søg')
+  expect(page.title.downcase).to have_text 'søg'
 end
 
 Når("jeg søger efter {string}") do |søg|
