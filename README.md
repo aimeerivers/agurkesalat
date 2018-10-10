@@ -15,6 +15,7 @@ Kom hurtigt i gang med funktionelle tests i Ruby, Cucumber, Selenium og Docker.
 * [Kør dine tests indenfor din container](#kør-dine-tests-indenfor-din-container)
   - [Test i Chrome eller Firefox](#test-i-chrome-eller-firefox)
   - [Test flere scenarier parallelt](#test-flere-scenarier-parallelt)
+  - [Test med en anden Selenium Grid](#test-med-en-anden-selenium-grid)
 * [Skriv nye tests](#skriv-nye-tests)
   - [Når du vil debug siden](#når-du-vil-debug-siden)
   - [Når du vil kigge indenfor containeren](#når-du-vil-kigge-indenfor-containeren)
@@ -130,6 +131,22 @@ Eller Chrome:
 
 ```bash
 docker run -t --network agurkesalat_default agurkesalat \
+  parallel_cucumber features -n 3 --group-by scenarios -o '-p chrome'
+```
+
+
+
+### Test med en anden Selenium Grid
+
+Du har ikke brug for at køre din egen Selenium Grid og nodes i containerer, når der er en anden Selenium Grid tilgængelig til dig. Brug derfor en miljøvariable i stedet for dit eget netværk:
+
+```bash
+docker run -t --env SELENIUM_HUB_ADDR=10.112.13.16 agurkesalat \
+  parallel_cucumber features -n 3 --group-by scenarios -o '-p firefox'
+```
+
+```bash
+docker run -t --env SELENIUM_HUB_ADDR=10.112.13.16 agurkesalat \
   parallel_cucumber features -n 3 --group-by scenarios -o '-p chrome'
 ```
 

@@ -16,17 +16,21 @@ else
   Capybara.default_driver = :selenium_grid_firefox
 end
 
+selenium_hub_addr = ENV['SELENIUM_HUB_ADDR'] || 'selenium_hub'
+selenium_hub_port = ENV['SELENIUM_HUB_PORT'] || '4444'
+selenium_url = "http://#{selenium_hub_addr}:#{selenium_hub_port}/wd/hub"
+
 Capybara.register_driver :selenium_grid_firefox do |app|
   Capybara::Selenium::Driver.new(app,
     :browser => :remote,
-    :url => "http://selenium_hub:4444/wd/hub",
+    :url => selenium_url,
     :desired_capabilities => Selenium::WebDriver::Remote::Capabilities.firefox)
 end
 
 Capybara.register_driver :selenium_grid_chrome do |app|
   Capybara::Selenium::Driver.new(app,
     :browser => :remote,
-    :url => "http://selenium_hub:4444/wd/hub",
+    :url => selenium_url,
     :desired_capabilities => Selenium::WebDriver::Remote::Capabilities.chrome)
 end
 
