@@ -15,7 +15,7 @@ COPY ./features ./features
 COPY cucumber.yml .
 
 # Skab nye mapper
-RUN mkdir -p /arbjede/skaermbilleder
+RUN mkdir -p /arbejde/skaermbilleder
 
 # Kør cucumber tests
 CMD cucumber --profile firefox
