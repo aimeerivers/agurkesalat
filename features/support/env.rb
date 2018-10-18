@@ -14,6 +14,8 @@ when 'chrome'
   Capybara.default_driver = :selenium_grid_chrome
 when 'safari'
   Capybara.default_driver = :selenium_grid_safari
+when 'ie'
+  Capybara.default_driver = :selenium_grid_ie
 else
   Capybara.default_driver = :selenium_grid_firefox
 end
@@ -41,6 +43,13 @@ Capybara.register_driver :selenium_grid_safari do |app|
     :browser => :remote,
     :url => selenium_url,
     :desired_capabilities => Selenium::WebDriver::Remote::Capabilities.safari)
+end
+
+Capybara.register_driver :selenium_grid_ie do |app|
+  Capybara::Selenium::Driver.new(app,
+    :browser => :remote,
+    :url => selenium_url,
+    :desired_capabilities => Selenium::WebDriver::Remote::Capabilities.internet_explorer)
 end
 
 Retriable.configure do |c|

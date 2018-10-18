@@ -1,3 +1,4 @@
 firefox: TEST_ENV=firefox
 chrome: TEST_ENV=chrome
 safari: TEST_ENV=safari
+ie: TEST_ENV=ie
