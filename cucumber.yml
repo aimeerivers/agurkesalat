@@ -1,4 +1,12 @@
-firefox: TEST_ENV=firefox
-chrome: TEST_ENV=chrome
-safari: TEST_ENV=safari
-ie: TEST_ENV=ie
+firefox: BROWSER=firefox
+chrome: BROWSER=chrome
+safari: BROWSER=safari
+ie: BROWSER='internet explorer'
+
+osx_firefox: PLATFORM=MAC BROWSER=firefox
+osx_chrome: PLATFORM=MAC BROWSER=chrome
+osx_safari: PLATFORM=MAC BROWSER=safari
+
+windows_firefox: PLATFORM=WINDOWS BROWSER=firefox
+windows_chrome: PLATFORM=WINDOWS BROWSER=chrome
+windows_ie: PLATFORM=WINDOWS BROWSER='internet explorer'
