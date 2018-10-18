@@ -4,6 +4,9 @@ safari: BROWSER=safari
 edge: BROWSER=MicrosoftEdge
 ie: BROWSER='internet explorer'
 
+linux_firefox: PLATFORM=LINUX BROWSER=firefox
+linux_chrome: PLATFORM=LINUX BROWSER=chrome
+
 osx_firefox: PLATFORM=MAC BROWSER=firefox
 osx_chrome: PLATFORM=MAC BROWSER=chrome
 osx_safari: PLATFORM=MAC BROWSER=safari
