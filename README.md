@@ -16,6 +16,7 @@ Kom hurtigt i gang med funktionelle tests i Ruby, Cucumber, Selenium og Docker.
   - [Test i Chrome eller Firefox](#test-i-chrome-eller-firefox)
   - [Test flere scenarier parallelt](#test-flere-scenarier-parallelt)
   - [Test med en anden Selenium Grid](#test-med-en-anden-selenium-grid)
+  - [Test på forskellige browsers med en Selenium Grid](#test-på-forskellige-browsers-med-en-selenium-grid)
 * [Skriv nye tests](#skriv-nye-tests)
   - [Når du vil debug siden](#når-du-vil-debug-siden)
   - [Når du vil kigge indenfor containeren](#når-du-vil-kigge-indenfor-containeren)
@@ -149,6 +150,26 @@ docker run -t --env SELENIUM_HUB_ADDR=10.112.13.16 agurkesalat \
 docker run -t --env SELENIUM_HUB_ADDR=10.112.13.16 agurkesalat \
   parallel_cucumber features -n 3 --group-by scenarios -o '-p chrome'
 ```
+
+
+### Test på forskellige browsers med en Selenium Grid
+
+De følgende profiles er tilgængelige, hvis du har nodes der kan køre dem:
+
+  * chrome
+  * firefox
+  * safari
+  * edge
+  * ie
+  * linux_chrome
+  * linux_firefox
+  * osx_chrome
+  * osx_firefox
+  * osx_safari
+  * windows_chrome
+  * windows_firefox
+  * windows_edge
+  * windows_ie
 
 
 
