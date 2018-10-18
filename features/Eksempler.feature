@@ -6,18 +6,3 @@ Egenskab: Eksempler
   Scenarie: Jeg besøger DRDKs hjemmeside
     Givet jeg er på DRDKs hjemmeside
     Så skal jeg se "DR" i titlen
-
-  Scenarie: Jeg tilføjer favoritkanaler i Radio oversigt
-    Givet jeg er på radio-oversigten
-    Når jeg tilføjer "P4 København" som en Favoritkanal
-    Så skal jeg se kun de følgende kanaler:
-       | P4 København |
-    Når jeg tilføjer "DR P1" som en Favoritkanal
-    Så skal jeg se kun de følgende kanaler:
-       | P4 København |
-       | DR P1        |
-
-  Scenarie: Hero programmer på DRTVs forside
-    Givet jeg er på DRTVs forside
-    Når jeg klikker på hver hero program link
-    Så skal jeg gå til den korrekte program side
