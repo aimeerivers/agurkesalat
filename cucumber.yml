@@ -1,6 +1,7 @@
 firefox: BROWSER=firefox
 chrome: BROWSER=chrome
 safari: BROWSER=safari
+edge: BROWSER=MicrosoftEdge
 ie: BROWSER='internet explorer'
 
 osx_firefox: PLATFORM=MAC BROWSER=firefox
@@ -9,4 +10,5 @@ osx_safari: PLATFORM=MAC BROWSER=safari
 
 windows_firefox: PLATFORM=WINDOWS BROWSER=firefox
 windows_chrome: PLATFORM=WINDOWS BROWSER=chrome
+windows_edge: PLATFORM=WINDOWS BROWSER=MicrosoftEdge
 windows_ie: PLATFORM=WINDOWS BROWSER='internet explorer'
