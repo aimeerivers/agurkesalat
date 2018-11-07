@@ -1,6 +1,6 @@
 # language: da
 
-Egenskab: Eksempler
+Egenskab: Eksempel
   Du kan godt slette den her fil, efter du sikrer at cucumber kører
 
   Scenarie: Jeg besøger DRDKs hjemmeside
