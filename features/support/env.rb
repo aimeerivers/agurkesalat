@@ -4,6 +4,7 @@ require 'selenium/webdriver'
 require 'selenium/webdriver/common/wait'
 require 'retriable'
 require 'rspec'
+require 'appium_capybara'
 
 Capybara.app_host = 'https://www.dr.dk'
 
