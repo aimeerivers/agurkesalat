@@ -13,9 +13,9 @@ Retriable.configure do |c|
   c.tries = 10
 end
 
-Before do
-  page.driver.browser.manage.window.resize_to(1280, 1024)
-end
+# Before do
+#   page.driver.browser.manage.window.resize_to(1280, 1024)
+# end
 
 After do |scenario|
   debug page if scenario.failed?
