@@ -5,7 +5,7 @@ require 'selenium/webdriver/common/wait'
 require 'retriable'
 require 'rspec'
 
-Capybara.app_host = 'https://www.dr.dk'
+Capybara.app_host = ENV.fetch('TEST_DOMAIN', 'https://www.dr.dk')
 
 Retriable.configure do |c|
   c.on = RSpec::Expectations::ExpectationNotMetError
