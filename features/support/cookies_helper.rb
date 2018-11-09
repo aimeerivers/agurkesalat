@@ -1,12 +1,12 @@
 module CookiesHelper
 
   def accept_cookies
-    sleep 0.2
+    sleep 0.5
     cookie_buttons = page.all('#CybotCookiebotDialogBodyButtonAccept')
-    cookie_buttons.first.click if cookie_buttons.any?
-    
-    Retriable.retriable do
-      expect(page.all('#CybotCookiebotDialogBodyUnderlay')).to be_empty
+    if cookie_buttons.any?
+      cookie_buttons.first.click
+      sleep 0.5
+      page.driver.browser.navigate.refresh
     end
   end
 
