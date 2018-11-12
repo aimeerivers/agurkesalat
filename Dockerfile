@@ -18,4 +18,4 @@ COPY cucumber.yml .
 RUN mkdir -p /arbejde/skaermbilleder
 
 # Kør cucumber tests
-CMD cucumber --profile firefox
+CMD cucumber --profile chrome

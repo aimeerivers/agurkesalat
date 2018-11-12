@@ -4,7 +4,7 @@ selenium_url = "http://#{selenium_hub_addr}:#{selenium_hub_port}/wd/hub"
 
 Capybara.register_driver :selenium_grid do |app|
   capabilities = Selenium::WebDriver::Remote::Capabilities.new
-  capabilities.browser_name = ENV.fetch('BROWSER', 'firefox')
+  capabilities.browser_name = ENV.fetch('BROWSER', 'chrome')
   capabilities.platform = ENV.fetch('PLATFORM', :any)
   capabilities.javascript_enabled = true
   capabilities.takes_screenshot = true
