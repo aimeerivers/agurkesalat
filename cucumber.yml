@@ -1,17 +1,18 @@
-firefox: BROWSER=firefox
 chrome: BROWSER=chrome
+firefox: BROWSER=firefox
 safari: BROWSER=safari
 edge: BROWSER=MicrosoftEdge
 ie: BROWSER='internet explorer'
 
-linux_firefox: PLATFORM=LINUX BROWSER=firefox
+headless: PLATFORM=LINUX BROWSER=chrome
 linux_chrome: PLATFORM=LINUX BROWSER=chrome
+linux_firefox: PLATFORM=LINUX BROWSER=firefox
 
-osx_firefox: PLATFORM=MAC BROWSER=firefox
 osx_chrome: PLATFORM=MAC BROWSER=chrome
+osx_firefox: PLATFORM=MAC BROWSER=firefox
 osx_safari: PLATFORM=MAC BROWSER=safari
 
-windows_firefox: PLATFORM=WINDOWS BROWSER=firefox
 windows_chrome: PLATFORM=WINDOWS BROWSER=chrome
+windows_firefox: PLATFORM=WINDOWS BROWSER=firefox
 windows_edge: PLATFORM=WINDOWS BROWSER=MicrosoftEdge
 windows_ie: PLATFORM=WINDOWS BROWSER='internet explorer'
