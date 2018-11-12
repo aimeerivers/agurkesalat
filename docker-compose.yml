@@ -18,6 +18,8 @@ services:
       - "5555"
     depends_on:
       - selenium_hub
+    volumes:
+      - /dev/shm:/dev/shm
 
   chrome:
     image: selenium/node-chrome
@@ -28,6 +30,8 @@ services:
       - "5555"
     depends_on:
       - selenium_hub
+    volumes:
+      - /dev/shm:/dev/shm
 
 networks:
   default:
