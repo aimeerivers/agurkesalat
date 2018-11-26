@@ -5,8 +5,8 @@ Givet("jeg er på DRDKs hjemmeside") do
   accept_cookies
 end
 
-Så("skal jeg se {string} i titlen") do |ord|
-  expect(page.title).to include ord
+Så("skal jeg se {string} i titlen") do |word|
+  expect(page.title).to include word
 end
 
 Når("jeg ændrer vindue størrelse til {int} x {int}") do |width, height|
