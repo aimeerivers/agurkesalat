@@ -4,7 +4,6 @@ safari: BROWSER=safari
 edge: BROWSER=MicrosoftEdge
 ie: BROWSER='internet explorer'
 
-headless: PLATFORM=LINUX BROWSER=chrome
 linux_chrome: PLATFORM=LINUX BROWSER=chrome
 linux_firefox: PLATFORM=LINUX BROWSER=firefox
 
