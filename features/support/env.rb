@@ -6,7 +6,7 @@ require 'retriable'
 require 'rspec'
 require 'pry'
 
-Capybara.app_host = ENV.fetch('SELENIUM_HUB_ADDR', 'https://www.dr.dk')
+Capybara.app_host = ENV.fetch('TEST_DOMAIN', 'https://www.dr.dk')
 
 Retriable.configure do |c|
   c.on = RSpec::Expectations::ExpectationNotMetError
