@@ -7,6 +7,16 @@ selenium_url = "http://#{selenium_hub_addr}:#{selenium_hub_port}/wd/hub"
 Capybara.register_driver :selenium_grid do |app|
   capabilities = Selenium::WebDriver::Remote::Capabilities.new
   capabilities.browser_name = ENV.fetch('BROWSER', 'chrome')
+
+  if ENV['HEADLESS']
+    capabilities['chromeOptions'] = {
+      args: [ "--headless", "--disable-gpu" ]
+    }
+    capabilities['moz:firefoxOptions'] = {
+      args: [ "-headless" ]
+    }
+  end
+
   capabilities.platform = ENV.fetch('PLATFORM', :any)
   capabilities.javascript_enabled = true
   capabilities.takes_screenshot = true
