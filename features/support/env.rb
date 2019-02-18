@@ -1,3 +1,5 @@
+STDOUT.sync = true
+
 require 'capybara'
 require 'capybara/cucumber'
 require 'selenium/webdriver'
