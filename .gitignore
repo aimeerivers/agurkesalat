@@ -11,6 +11,7 @@
 /test/version_tmp/
 /tmp/
 /skaermbilleder/
+/gen/allure-results/
 
 # Used by dotenv library to load environment variables.
 # .env
